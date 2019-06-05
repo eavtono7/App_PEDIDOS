@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-sucursales',
@@ -8,9 +9,14 @@ import { NavController } from '@ionic/angular';
 })
 export class SucursalesPage implements OnInit {
 
-  constructor() { }
+  constructor( public router : Router
+
+  ) { }
 
   ngOnInit() {
   }
 
+  VolverHome(){
+    this.router.navigate(['/home']);
+  }
 }
