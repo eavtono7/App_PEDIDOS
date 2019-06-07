@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router'
+import { ChachasService, chacha} from "../../servicios/chachas.service";
+
 
 @Component({
   selector: 'app-menu',
@@ -8,9 +10,14 @@ import {Router} from '@angular/router'
 })
 export class MenuPage implements OnInit {
 
-  constructor(public router : Router) { }
+  public chachaslist:any=[];
+
+  constructor(public router : Router, public chachasservice : ChachasService) { }
 
   ngOnInit() {
+    this.chachasservice.getChachas().subscribe(chachas => {
+      this.chachaslist = chachas;
+    })
   }
 
   VolverHome(){

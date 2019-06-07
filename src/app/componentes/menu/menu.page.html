@@ -7,6 +7,15 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content padding>
+  <ion-item *ngFor = "let chacha of chachaslist">
+    <ion-avatar slot ="start">
+      <ion-img [src]="chacha.img"></ion-img>
+    </ion-avatar>
+    <ion-label>
+      <h2>{{chacha.nombre_chacha}}</h2>
+      <p>{{chacha.descripcion_chacha}}</p>
+    </ion-label>
+  </ion-item> 
 
 </ion-content>
