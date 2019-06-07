@@ -1,15 +1,32 @@
 <ion-header>
   <ion-toolbar>
     <ion-button fill = "clear"><ion-icon name="arrow-round-back" size="large" slot="start" ></ion-icon></ion-button>
-    <ion-title slot="medium">sucursales</ion-title>
+    <ion-title slot="medium">SUCURSALES</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <ion-list>
-    <button ion-item *ngFor="let item of ListaSucursales" (click)="openNavDetailsPage(item)" icon-start>
-      <ion-icon [name]="'logo-' + item.icon" [ngStyle]="{'color': item.color}" item-start></ion-icon>
-      {{ item.title }}
-    </button>
-  </ion-list>
+
+<ion-content padding >
+  <ion-card>
+      <ion-list-header>
+          <ion-label>SUCURSALES EN LA PAZ</ion-label>
+        </ion-list-header>
+            <ion-list>
+                <button ion-item *ngFor="let item of listaSuc" item-start>
+                   <ion-item>
+                        <ion-icon name= "pin" item-start [ngStyle]="{'color': item.color}"></ion-icon>
+                        {{ item.title }}
+                    </ion-item> 
+                
+                
+                
+                 </button>
+
+    
+            </ion-list>
+  </ion-card>
+    
+      
+        
+     
 </ion-content>

@@ -7,54 +7,43 @@ import { MasinfoPage } from '../masinfo/masinfo.page';
   templateUrl: './sucursales.page.html',
   styleUrls: ['./sucursales.page.scss'],
 })
-export class SucursalesPage implements OnInit {
-  ListaSucursales= [];
+export class SucursalesPage  {
+ 
+  listaSuc=[];
 
-  constructor(public nav: NavController) {
-
-    this.ListaSucursales= [
+  constructor(public navCtrl: NavController) {
+    this.listaSuc= [
       {
-        'title': 'CasaMatriz',
+        'title': 'Casa Matriz',
         'icon': 'pin',
-        'description': 'A powerful Javascript framework for building single page apps. Angular is open source, and maintained by Google.',
-        'color': '#E63135'
+        'color': "#E63135"
+  
       },
       {
-        'title': 'Sucursal 1',
+        'title': 'Sucursal 1- Centro',
         'icon': 'pin',
-        'description': 'A powerful Javascript framework for building single page apps. Angular is open source, and maintained by Google.',
-        'color': '#E63135'
+        'color': "#E63135"
+      },
+      
+      {
+        'title': 'Sucursal 2- Obrajes',
+        'icon': 'pin',
+        'color': "#E63135"
       },
       {
-        'title': 'Sucursal Calacoto',
+        'title': 'Sucursal 3- Calacoto',
         'icon': 'pin',
-        'description': 'A powerful Javascript framework for building single page apps. Angular is open source, and maintained by Google.',
-        'color': '#E63135'
+        'color': "#E63135"
       },
       {
-        'title': 'Sucursal Zona Sur',
+        'title': 'Sucursal 4- Multicine',
         'icon': 'pin',
-        'description': 'A powerful Javascript framework for building single page apps. Angular is open source, and maintained by Google.',
-        'color': '#E63135'
-      },
-      {
-        'title': 'Sucursal Obrajes',
-        'icon': 'pin',
-        'description': 'A powerful Javascript framework for building single page apps. Angular is open source, and maintained by Google.',
-        'color': '#E63135'
-      },
-      {
-        'title': 'Sucursal Centro',
-        'icon': 'pin',
-        'description': 'A powerful Javascript framework for building single page apps. Angular is open source, and maintained by Google.',
-        'color': '#E63135'
+        'color': "#E63135"
       }
     ]
    }
   
-  openNavDetailsPage(item) {
-    this.nav.push(MasinfoPage, { item: item });
-  }
+  
 
 
   ngOnInit() {

@@ -11,13 +11,14 @@ export class HomePage {
   constructor(public router : Router
   ) {}
 
-  IrASucursales(){
-    this.router.navigate(['/sucursales']);
-  }
+  
   IrAMenu(){
     this.router.navigate(['/menu']);
   }
   IrAOrdenar(){
     this.router.navigate(['/ordenar']);
+  }
+  IrASucursales(){
+    this.router.navigate(['/sucursales']);
   }
 }
