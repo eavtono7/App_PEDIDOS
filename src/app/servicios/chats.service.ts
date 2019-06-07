@@ -9,8 +9,8 @@ export class ChatsService {
 
   constructor( private db : AngularFirestore) { }
 
-  getChatRooms(){
-    return this.db.collection('Empanadas').snapshotChanges()
+  getDetallePedido(){
+    return this.db.collection('DetallePedido').snapshotChanges()
   }
 
 

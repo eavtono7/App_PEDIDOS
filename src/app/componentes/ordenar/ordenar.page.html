@@ -7,6 +7,16 @@
   </ion-toolbar>
 </ion-header>
 
+<ion-content padding >
+ <ion-item>
+   <ion-label position="floating">noombre</ion-label>
+   <ion-input type="Text"  [(ngModel)]="name" name="name"></ion-input>
+ </ion-item>
+
+ <ion-button (click)="OnSubmitOrdenar()" expand="block">Guardar</ion-button>
+ <h3>noombre :{{noombre}}</h3>
+
+</ion-content>
 
 <!-- List of Text Items -->
 <ion-list>

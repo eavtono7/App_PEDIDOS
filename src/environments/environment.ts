@@ -7,6 +7,7 @@ export const environment = {
 };
 
 export const firebaseConfig  = {
+
     apiKey: "AIzaSyAb2y8bQpkKEGc0AbSE4BGcnHU8pDPTIBM",
     authDomain: "appclientes-55a12.firebaseapp.com",
     databaseURL: "https://appclientes-55a12.firebaseio.com",
