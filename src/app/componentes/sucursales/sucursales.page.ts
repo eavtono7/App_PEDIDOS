@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { NavController } from '@ionic/angular';
-import { MasinfoPage } from '../masinfo/masinfo.page';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-sucursales',
@@ -11,7 +11,7 @@ export class SucursalesPage  {
  
   listaSuc=[];
 
-  constructor(public navCtrl: NavController) {
+  constructor(public router: Router) {
     this.listaSuc= [
       {
         'title': 'Casa Matriz',
@@ -44,9 +44,14 @@ export class SucursalesPage  {
    }
   
   
+   MasInformacion()
+   {
+     this.router.navigate(['/masinfo']);
+    }
 
+  ngOnInit() 
+  {
+   }
 
-  ngOnInit() {
-  }
-
+  
 }

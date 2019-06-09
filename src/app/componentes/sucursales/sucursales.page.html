@@ -12,17 +12,14 @@
           <ion-label>SUCURSALES EN LA PAZ</ion-label>
         </ion-list-header>
             <ion-list>
-                <button ion-item *ngFor="let item of listaSuc" item-start>
-                   <ion-item>
-                        <ion-icon name= "pin" item-start [ngStyle]="{'color': item.color}"></ion-icon>
+                <button ion-item *ngFor="let item of listaSuc" (click)='MasInformacion()' item-start>
+                   <ion-item expand="block">
+                        <ion-icon name= "pin" item-start [ngStyle]="{'color': item.color}" ></ion-icon>
                         {{ item.title }}
                     </ion-item> 
-                
-                
-                
                  </button>
 
-    
+     
             </ion-list>
   </ion-card>
     

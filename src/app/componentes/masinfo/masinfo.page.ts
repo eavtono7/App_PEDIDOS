@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NavController, NavParams } from '@ionic/angular';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-masinfo',
@@ -8,9 +8,10 @@ import { NavController, NavParams } from '@ionic/angular';
 })
 export class MasinfoPage implements OnInit {
 
-  constructor(public nativ:NavController,public navParams: NavParams) { }
+  constructor(public router: Router) { }
 
   ngOnInit() {
+    
   }
 
 }
