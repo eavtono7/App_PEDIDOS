@@ -7,6 +7,7 @@ export interface chacha {
   nombre_chacha : string
   descripcion_chacha : string
   img : string
+  precio : number
 }
 @Injectable({
   providedIn: 'root'

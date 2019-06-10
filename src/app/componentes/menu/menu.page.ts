@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router'
 import { ChachasService, chacha} from "../../servicios/chachas.service";
-import { chachaobj } from "../../modelos/chacha";
+//import { chachaobj } from "../../modelos/chacha";
 
 
 @Component({
