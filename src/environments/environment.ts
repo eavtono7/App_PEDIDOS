@@ -5,6 +5,17 @@
 export const environment = {
   production: false
 };
+export const firebaseConfig=  {
+  
+    apiKey: "AIzaSyAnpk35zffaQOBwwaVqrRId3D3HBB52w9M<API_KEY>",
+    authDomain: "sucursales-5f22e.firebaseapp.com",
+    databaseURL: "https://sucursales-5f22e.firebaseio.com",
+    projectId: "sucursales-5f22e",
+    storageBucket: "sucursales-5f22e.appspot.com",
+    messagingSenderId: "937350103392"
+
+
+};
 
 /*
  * For easier debugging in development mode, you can import the following file
