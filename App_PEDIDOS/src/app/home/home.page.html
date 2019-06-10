@@ -1,96 +1,70 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="primary">
     <ion-title>
       Pedidos Chachas
     </ion-title>
   </ion-toolbar>
 </ion-header>
-<ion-content>
+<ion-content color="secondary">
   <div class="ion-padding">
-    PEDIDOS
     Aqui usted puede ordenar Chachas con una entrega rapida y completa
-      <ion-item>
-        <ion-label>Chacha</ion-label>
-        <ion-select multiple="true" cancelText="Cancelar" okText="Aceptar">
-          <ion-select-option value="Pollo">Pollo</ion-select-option>
-          <ion-select-option value="Mixta (Pollo-Res)">Mixta (Pollo-Res)</ion-select-option>
-          <ion-select-option value="Res">Res</ion-select-option>
-          <ion-select-option value="Marisco">Marisco</ion-select-option>
-          <ion-select-option value="Fricase">Fricase</ion-select-option>
-          <ion-select-option value="Charque">Charque</ion-select-option>
-          <ion-select-option value="Jamon y queso">Jamon y queso</ion-select-option>
-          <ion-select-option value="Pizza">Pizza</ion-select-option>
-          <ion-select-option value="Choclo con queso">Choclo con queso</ion-select-option>
-          <ion-select-option value="Queso">Queso</ion-select-option>
-          <ion-select-option value="Dulce de leche">Dulce de leche</ion-select-option>
-        </ion-select>
-      </ion-item>
-<!-- Input with value -->
-<ion-input value="Cantidad Chachas"></ion-input>
-<!-- Number type input -->
-<ion-input type="number" value="1"></ion-input>
-      <ion-item>
-        <ion-label>Refrescos y Jugos</ion-label>
-        <ion-select multiple="true">
-          <ion-select-option value="Durazno" selected>Durazno</ion-select-option>
-          <ion-select-option value="Manzana">Manzana</ion-select-option>
-          <ion-select-option value="Naranja" selected>Naranja</ion-select-option>
-          <ion-select-option value="Limon">Limon</ion-select-option>
-        </ion-select>
-      </ion-item>
-<!-- Input with value -->
-<ion-input value="Cantidad Refrescos y Jugos"></ion-input>
-<!-- Number type input -->
-<ion-input type="number" value="1"></ion-input>
-<ion-fab vertical="center" horizontal="end" slot="fixed">
-    <ion-fab-button>
-      <ion-icon name="add"></ion-icon>
-    </ion-fab-button>
-  </ion-fab>
-  <ion-item>
-      <ion-label>Refrescos</ion-label>
-      <ion-picker></ion-picker>
+    <ion-item>
+      <ion-label >Chacha</ion-label>
+      <ion-select multiple="true" cancelText="Cancelar" okText="Aceptar">
+        <ion-select-option value="Pollo">Pollo</ion-select-option>
+        <ion-select-option value="Mixta (Pollo-Res)">Mixta (Pollo-Res)</ion-select-option>
+        <ion-select-option value="Res">Res</ion-select-option>
+        <ion-select-option value="Marisco">Marisco</ion-select-option>
+        <ion-select-option value="Fricase">Fricase</ion-select-option>
+        <ion-select-option value="Charque">Charque</ion-select-option>
+        <ion-select-option value="Jamon y queso">Jamon y queso</ion-select-option>
+        <ion-select-option value="Pizza">Pizza</ion-select-option>
+        <ion-select-option value="Choclo con queso">Choclo con queso</ion-select-option>
+        <ion-select-option value="Queso">Queso</ion-select-option>
+        <ion-select-option value="Dulce de leche">Dulce de leche</ion-select-option>
+      </ion-select>
     </ion-item>
-    <!--PEDIDOS
-    Aqui usted puede ordenar Chachas con una entrega rapida y completa
-      <ion-item>
-        <ion-label>Chacha</ion-label>
-        <ion-select multiple="true" cancelText="Cancelar" okText="Aceptar">
-          <ion-select-option value="Pollo">Pollo</ion-select-option>
-          <ion-select-option value="Mixta (Pollo-Res)">Mixta (Pollo-Res)</ion-select-option>
-          <ion-select-option value="Res">Res</ion-select-option>
-          <ion-select-option value="Marisco">Marisco</ion-select-option>
-          <ion-select-option value="Fricase">Fricase</ion-select-option>
-          <ion-select-option value="Charque">Charque</ion-select-option>
-          <ion-select-option value="Jamon y queso">Jamon y queso</ion-select-option>
-          <ion-select-option value="Pizza">Pizza</ion-select-option>
-          <ion-select-option value="Choclo con queso">Choclo con queso</ion-select-option>
-          <ion-select-option value="Queso">Queso</ion-select-option>
-          <ion-select-option value="Dulce de leche">Dulce de leche</ion-select-option>
-        </ion-select>
-      </ion-item>
+    <ion-item>
+      <ion-label position="floating">Ingrese Cantidad</ion-label>
+      <ion-input></ion-input>
+    </ion-item>
 
-<ion-input value="Cantidad Chachas"></ion-input>
-<ion-input type="number" value="1"></ion-input>
-      <ion-item>
-        <ion-label>Refrescos y Jugos</ion-label>
-        <ion-select multiple="true">
-          <ion-select-option value="Durazno" selected>Durazno</ion-select-option>
-          <ion-select-option value="Manzana">Manzana</ion-select-option>
-          <ion-select-option value="Naranja" selected>Naranja</ion-select-option>
-          <ion-select-option value="Limon">Limon</ion-select-option>
-        </ion-select>
-      </ion-item>
-<ion-input value="Cantidad Refrescos y Jugos"></ion-input>
-<ion-input type="number" value="1"></ion-input>
-<ion-fab vertical="center" horizontal="end" slot="fixed">
-    <ion-fab-button>
-      <ion-icon name="add"></ion-icon>
-    </ion-fab-button>
-  </ion-fab>
-  <ion-item>
-      <ion-label>Refrescos</ion-label>
-      <ion-picker></ion-picker>
-    </ion-item>  -->
+
+    <ion-item>
+      <ion-label>Refrescos y Jugos</ion-label>
+      <ion-select multiple="true">
+        <ion-select-option value="Durazno" selected>Durazno</ion-select-option>
+        <ion-select-option value="Manzana">Manzana</ion-select-option>
+        <ion-select-option value="Naranja" selected>Naranja</ion-select-option>
+        <ion-select-option value="Limon">Limon</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Ingrese Cantidad</ion-label>
+      <ion-input></ion-input>
+    </ion-item>
+    <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+      <ion-fab-button>
+        <ion-icon name="add"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+
+
+
+
+
+
+
+<!--
+<ion-input placeholder="Enter Input"></ion-input>
+
+
+<ion-input clearInput value="clear me"></ion-input>
+
+<ion-item>
+  <ion-label position="floating">Ingrese Cantidad</ion-label>
+  <ion-input></ion-input>
+</ion-item>
+-->
   </div>
 </ion-content>
