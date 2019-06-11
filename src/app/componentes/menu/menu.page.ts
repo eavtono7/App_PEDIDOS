@@ -20,7 +20,7 @@ export class MenuPage implements OnInit {
       this.chachaslist = chachas;
     })
   }
-
+    
   VolverHome(){
     this.router.navigate(['/home']);
   }
