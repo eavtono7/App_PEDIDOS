@@ -1,0 +1,7 @@
+{
+  "name": "applocal",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
