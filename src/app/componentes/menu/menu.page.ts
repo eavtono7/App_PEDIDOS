@@ -3,6 +3,8 @@ import {Router} from '@angular/router'
 import { Observable } from 'rxjs';
 import { AngularFirestoreCollection, AngularFirestore } from '@angular/fire/firestore';
 import { map } from 'rxjs/operators';
+import {ModalController} from "@ionic/angular";
+import {ChachaComponent} from "../chacha/chacha.component";
 
 export interface chacha {
   descripcion : string
@@ -23,7 +25,8 @@ export class MenuPage {
 
   @ViewChild('map') mapElement: ElementRef;
   map: any;
-  constructor(public router : Router, private database: AngularFirestore) {
+  constructor(public router : Router, private database: AngularFirestore, 
+    private modal : ModalController) {
     this.getEmpanadas();
    }
 
@@ -41,25 +44,22 @@ export class MenuPage {
      ); 
    }
 
-  //   getDatosEmpanada (){
-  //    return this.database.collection('chachas').snapshotChanges().pipe(map(rooms => {
-  //      return rooms.map(a => {
-  //        const data = a.payload.doc.data() as chacha;
-  //        data.id = a.payload.doc.id;
-  //        return data;
-  //      })
-  //    }))
-  //  }
-  //  }
-  //   getDatosEmpanada(chachas_id : string){
-  //     return this.IDBOpenDBRequest.collection('chachas').doc(chacha_id).valueChanges()
-  //   }
-
   ngOnInit() {
   }
 
   VolverHome(){
     this.router.navigate(['/home']);
+  }
+
+  openChacha(chacha){
+
+    this.modal.create({
+      component : ChachaComponent,
+      componentProps : {
+        chacha: chacha
+      }
+    }).then((modal) => modal.present())
+
   }
 
 }

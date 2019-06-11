@@ -12,10 +12,11 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { ChachaComponent } from "./componentes/chacha/chacha.component"; 
 
 @NgModule({
-  declarations: [AppComponent],
-  entryComponents: [],
+  declarations: [AppComponent, ChachaComponent],
+  entryComponents: [ChachaComponent],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, 
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,],
