@@ -5,27 +5,40 @@ import { AngularFirestoreCollection, AngularFirestore } from '@angular/fire/fire
 import { map } from 'rxjs/operators';
 import {ModalController} from "@ionic/angular";
 import {ChachaComponent} from "../chacha/chacha.component";
+import { ChachasService } from 'src/app/servicios/chachas.service';
 
-export interface chacha {
+interface chacha {
+  id : string
   descripcion : string
   nombre : string
   img : string
   precio : number
+
 }
+
+// export interface chacha {
+//   descripcion : string
+//   nombre : string
+//   img : string
+//   precio : number
+// }
 
 @Component({
   selector: 'app-menu',
   templateUrl: './menu.page.html',
   styleUrls: ['./menu.page.scss'],
 })
-export class MenuPage {
+export class MenuPage implements OnInit{
+
+  public chachaRooms :any = [];
 
   empanadas: Observable<any>;
   listaEmpanadas: AngularFirestoreCollection<any>;
 
-  @ViewChild('map') mapElement: ElementRef;
+ // @ViewChild('map') mapElement: ElementRef;
   map: any;
-  constructor(public router : Router, private database: AngularFirestore, 
+  constructor( public chachaservice : ChachasService,
+    public router : Router, private database: AngularFirestore, 
     private modal : ModalController) {
     this.getEmpanadas();
    }
@@ -41,10 +54,19 @@ export class MenuPage {
          return { id, ...data};
        })
       )
-     ); 
+     );   
    }
 
   ngOnInit() {
+    this.chachaservice.getChachaRooms().subscribe( chachas => {
+      chachas.map(chacha => {
+
+        const data : chacha = chacha.payload.doc.data() as chacha;
+        data.id = chacha.payload.doc.id;
+
+        console.log(chacha.payload.doc.data())
+      })
+    })
   }
 
   VolverHome(){

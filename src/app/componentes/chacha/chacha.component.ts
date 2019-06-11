@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {NavParams} from "@ionic/angular"
+import {NavParams, ModalController} from "@ionic/angular"
 
 @Component({
   selector: 'app-chacha',
@@ -8,12 +8,16 @@ import {NavParams} from "@ionic/angular"
 })
 export class ChachaComponent implements OnInit {
 
-  public chacha : any;
-  constructor( private navparams : NavParams) { }
+  public nombre : string;
+  constructor( private navparams : NavParams, private modal: ModalController) { }
 
   ngOnInit() {
 
-    this.chacha = this.navparams.get('chacha')
+    this.nombre = this.navparams.get('chacha')
+  }
+
+  closeChacha(){
+    this.modal.dismiss();
   }
 
 }
