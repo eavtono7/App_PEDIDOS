@@ -12,10 +12,11 @@ import {AngularFireModule} from '@angular/fire';
 import { AngularFirestoreModule, FirestoreSettingsToken} from '@angular/fire/firestore';
 import { firebaseConfig  }from '../environments/environment';
 import { AngularFireAuthModule} from '@angular/fire/auth'
+import { MasinfoComponent} from './componentes/masinfo/masinfo.component';
 
 @NgModule({
-  declarations: [AppComponent],
-  entryComponents: [],
+  declarations: [AppComponent, MasinfoComponent],
+  entryComponents: [MasinfoComponent],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,
     AngularFireModule.initializeApp(firebaseConfig),AngularFireAuthModule, AngularFirestoreModule],
   providers: [

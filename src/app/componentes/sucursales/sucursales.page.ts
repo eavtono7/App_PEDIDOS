@@ -3,9 +3,9 @@ import { Router } from '@angular/router';
 import { SucursalesService,sucursal} from 'src/app/servicios/sucursales.service';
 import { ChangeDetectorStatus } from '@angular/core/src/change_detection/constants';
 import { map } from "rxjs/operators";
-import {ModalController} from '@ionic/angular';
-import { from } from 'rxjs';
+import { ModalController } from '@ionic/angular';
 
+import { MasinfoComponent } from '../masinfo/masinfo.component';
 
 
 @Component({
@@ -17,12 +17,21 @@ export class SucursalesPage implements OnInit {
  
   public listaSuc: any =[];
 
-  constructor(public router: Router, public SucursalesService:SucursalesService) {}
+  constructor(public router: Router, public SucursalesService:SucursalesService, private modal : ModalController ) {}
   
   
-   MasInformacion()
+   MasInformacion(sucursal)
    {
-     this.router.navigate(['/masinfo']);
+     this.modal.create({
+       component: MasinfoComponent, 
+       componentProps : {
+       nombresuc : sucursal.nombre_sucursal,
+       direccionsuc: sucursal.direccion_sucursal,
+       telefonosuc: sucursal.telefono_sucursal,
+       ubicacion: sucursal.ubicacion
+       }
+     }).then ((modal)=>modal.present())
+     
     }
 
   ngOnInit() 
