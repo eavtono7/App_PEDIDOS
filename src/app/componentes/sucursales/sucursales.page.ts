@@ -1,16 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { SucursalesService} from 'src/app/servicios/sucursales.service';
+import { SucursalesService,sucursal} from 'src/app/servicios/sucursales.service';
 import { ChangeDetectorStatus } from '@angular/core/src/change_detection/constants';
 import { map } from "rxjs/operators";
+import {ModalController} from '@ionic/angular';
+import { from } from 'rxjs';
 
-interface sucursal{
-  id : string
-  direccion_sucursal: string
-  ubicacion: any 
-  telefono_sucursal: string
-  nombre_sucursal: string
-  }
+
 
 @Component({
   selector: 'app-sucursales',
@@ -26,22 +22,13 @@ export class SucursalesPage implements OnInit {
   
    MasInformacion()
    {
-     
      this.router.navigate(['/masinfo']);
     }
 
   ngOnInit() 
   {
     this.SucursalesService.getSucursales().subscribe(sucursales =>{
-      sucursales.map(suc => {
-        const data : sucursal = suc.payload.doc.data() as sucursal;
-        data.id=suc.payload.doc.id;
-        this.listaSuc.push(data);
-        
-       /* const data: sucursal = suc.payload.doc.data() as sucursal;
-      data.id = suc.payload.doc.id;
-      this.listaSuc.push(data);*/
-    })
+    this.listaSuc = sucursales;
       
     })
   }

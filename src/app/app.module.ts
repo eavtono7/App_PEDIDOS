@@ -8,7 +8,6 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-
 import {AngularFireModule} from '@angular/fire';
 import { AngularFirestoreModule, FirestoreSettingsToken} from '@angular/fire/firestore';
 import { firebaseConfig  }from '../environments/environment';
