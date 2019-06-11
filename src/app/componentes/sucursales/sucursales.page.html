@@ -1,29 +1,24 @@
 <ion-header>
   <ion-toolbar>
-    <ion-button fill = "clear"><ion-icon name="arrow-round-back" size="large" slot="start" ></ion-icon></ion-button>
-    <ion-title slot="medium">SUCURSALES</ion-title>
+    <ion-button fill = "clear"><ion-icon name="arrow-round-back" size="large" slot="start" ></ion-icon>
+    </ion-button>
+    <ion-title >SUCURSALES</ion-title>
   </ion-toolbar>
 </ion-header>
 
 
 <ion-content padding >
-  <ion-card>
-      <ion-list-header>
-          <ion-label>SUCURSALES EN LA PAZ</ion-label>
-        </ion-list-header>
-            <ion-list>
-                <button ion-item *ngFor="let item of listaSuc" (click)='MasInformacion()' item-start>
-                   <ion-item expand="block">
-                        <ion-icon name= "pin" item-start [ngStyle]="{'color': item.color}" ></ion-icon>
-                        {{ item.title }}
-                    </ion-item> 
-                 </button>
 
-     
-            </ion-list>
-  </ion-card>
-    
-      
+  <ion-list>
+  <ion-item *ngFor ="let sucursal of listaSuc" (click) = 'MasInformacion()'>
+    <ion-icon name="pin" color= "red" slot = "start" size = "large"></ion-icon>
+      <ion-label>
+       <h2> <b>{{sucursal.nombre_sucursal}}</b></h2>
+       <p>{{sucursal.direccion_sucursal}} </p>
+        </ion-label>
+       </ion-item>
+  </ion-list>
+  
         
      
 </ion-content>
