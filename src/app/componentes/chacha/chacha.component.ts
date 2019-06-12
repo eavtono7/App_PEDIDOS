@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import {NavParams, ModalController} from "@ionic/angular";
-//import {} from "../../servicios/chachas.service"
 
 @Component({
   selector: 'app-chacha',
@@ -13,7 +12,6 @@ export class ChachaComponent implements OnInit {
   constructor( 
     private navparams : NavParams, 
     private modal: ModalController
-  //  , private chachaService : ChachasService
     ) { }
 
   ngOnInit() {
