@@ -14,11 +14,19 @@
     <ion-item>
       <ion-img [src]="chacha.img"></ion-img>
     </ion-item>
-    <ion-item>
-      <ion-label>
-        <h3>{{chacha.descripcion_chacha}}</h3>
-        <h3>{{chacha.precio_chacha    }}  Bs</h3>
-      </ion-label>
-    </ion-item>
   </ion-list>
 </ion-content>  
+
+
+<ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>{{chacha.precio_chacha    }}        Bs</ion-card-subtitle>
+      <ion-card-title>{{chacha.nombre_chacha}}</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      {{chacha.descripcion_chacha}}
+      
+    </ion-card-content>
+  </ion-card>
+  
