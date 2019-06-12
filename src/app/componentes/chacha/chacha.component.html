@@ -1,25 +1,21 @@
 
-
+<ion-content>
 <ion-header>
   <ion-toolbar>
     <ion-button slot="start" fill="clear" (click)="closeChacha()">
       <ion-icon name="close"></ion-icon>
     </ion-button>
-    <ion-title>{{chacha.nombre_chacha}}</ion-title>
+    <ion-title>Más Información</ion-title>
   </ion-toolbar>
 </ion-header>
-
-<ion-content padding>
-  <ion-list>
-    <ion-item>
-      <ion-img [src]="chacha.img"></ion-img>
-    </ion-item>
-  </ion-list>
-</ion-content>  
-
-
+ 
+  
 <ion-card>
-    <ion-card-header>
+    <ion-card-header slot='start'>
+        <ion-item>
+          <ion-img [src]="chacha.img"></ion-img>
+        </ion-item>
+    
       <ion-card-subtitle>{{chacha.precio_chacha    }}        Bs</ion-card-subtitle>
       <ion-card-title>{{chacha.nombre_chacha}}</ion-card-title>
     </ion-card-header>
@@ -29,4 +25,5 @@
       
     </ion-card-content>
   </ion-card>
-  
+</ion-content>
+ 
