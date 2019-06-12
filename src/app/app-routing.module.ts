@@ -8,6 +8,7 @@ const routes: Routes = [
   { path: 'menu', loadChildren: './componentes/menu/menu.module#MenuPageModule' },
   { path: 'ordenar', loadChildren: './componentes/ordenar/ordenar.module#OrdenarPageModule' },  { path: 'masinfo', loadChildren: './componentes/masinfo/masinfo.module#MasinfoPageModule' },
   { path: 'masinfo', loadChildren: './componentes/masinfo/masinfo.module#MasinfoPageModule' },
+  { path: 'masinfo', loadChildren: './componentes/masinfo/masinfo.module#MasinfoPageModule' },
 
 ];
 

@@ -13,6 +13,7 @@ import { AngularFirestoreModule, FirestoreSettingsToken} from '@angular/fire/fir
 import { firebaseConfig  }from '../environments/environment';
 import { AngularFireAuthModule} from '@angular/fire/auth'
 import { MasinfoComponent} from './componentes/masinfo/masinfo.component';
+import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 
 @NgModule({
   declarations: [AppComponent, MasinfoComponent],
@@ -20,6 +21,7 @@ import { MasinfoComponent} from './componentes/masinfo/masinfo.component';
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,
     AngularFireModule.initializeApp(firebaseConfig),AngularFireAuthModule, AngularFirestoreModule],
   providers: [
+    InAppBrowser,
     StatusBar,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },

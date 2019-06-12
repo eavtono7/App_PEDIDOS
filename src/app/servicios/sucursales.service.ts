@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { map } from "rxjs/operators";
-
+ 
 export interface sucursal
 {
   id : string
@@ -9,6 +9,7 @@ export interface sucursal
   ubicacion: any 
   telefono_sucursal: string
   nombre_sucursal: string
+  imagen_sucursal: any
   }
 
 

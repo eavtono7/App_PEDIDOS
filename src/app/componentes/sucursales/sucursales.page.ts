@@ -28,7 +28,8 @@ export class SucursalesPage implements OnInit {
        nombresuc : sucursal.nombre_sucursal,
        direccionsuc: sucursal.direccion_sucursal,
        telefonosuc: sucursal.telefono_sucursal,
-       ubicacion: sucursal.ubicacion
+       ubicacion: sucursal.ubicacion,
+       imagensuc: sucursal.imagen_sucursal
        }
      }).then ((modal)=>modal.present())
      
