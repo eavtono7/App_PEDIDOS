@@ -7,36 +7,25 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content padding >
- <ion-item>
-   <ion-label position="floating">noombre</ion-label>
-   <ion-input type="Text"  [(ngModel)]="name" name="name"></ion-input>
- </ion-item>
+<ion-content padding>
+  <ion-list>
+  <ion-item *ngFor = "let DetalleTipoEmpanada of chachaslist">
+    <ion-avatar slot = "start">
+        <ion-img [src]="DetalleTipoEmpanada.Imagen"> </ion-img>
+    </ion-avatar>
+    <ion-label>
+      <h3><b>{{DetalleTipoEmpanada.Nombre_Empanada}}</b></h3>
+      <p>Precio(Bs.)</p>
+      <p>{{DetalleTipoEmpanada.Precio_Empanada}}</p>
+    </ion-label>
+  </ion-item> 
 
- <ion-button (click)="OnSubmitOrdenar()" expand="block">Guardar</ion-button>
- <h3>noombre :{{noombre}}</h3>
-
-</ion-content>
-
-<!-- List of Text Items -->
-<ion-list>
-  <ion-item>
-    <ion-label>Pokémon Yellow</ion-label>
-  </ion-item>
-  <ion-item>
-    <ion-label>Mega Man X</ion-label>
-  </ion-item>
-  <ion-item>
-    <ion-label>The Legend of Zelda</ion-label>
-  </ion-item>
-  <ion-item>
-    <ion-label>Pac-Man</ion-label>
-  </ion-item>
-  <ion-item>
-    <ion-label>Super Mario World</ion-label>
-  </ion-item>
+ 
+  <ion-button size="small">Total Bs.</ion-button>
 </ion-list>
 
 
-  
+</ion-content>
+
+
   

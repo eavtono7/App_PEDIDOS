@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router'
 // verificar si la direccion esta bien 
-import { ChatsService } from "../../servicios/Chats.service";
-import { AuthService } from "../../servicios/auth.service";
+import { ChatsService, DetalleChacha } from "../../servicios/Chats.service";
+
 
 
 
@@ -11,30 +11,21 @@ import { AuthService } from "../../servicios/auth.service";
   templateUrl: './ordenar.page.html',
   styleUrls: ['./ordenar.page.scss'],
 })
-export class OrdenarPage implements  OnInit {
+export class OrdenarPage implements OnInit  {
   
-  name:string;
-  private subscription;
+  public chachaslist:any=[];
 
-  constructor(public router : Router ,
-    public authservice : AuthService, 
-    public chatservice : ChatsService,  
-    ) { }
-    ngOnInit(){
-      this.chatservice.getDetallePedido().subscribe(chats =>{
-        console.log(chats)
-      })
+  constructor(public router : Router, public chatsservice : ChatsService) { }
 
-    }
-    ngOnDestroy() {
-      this.subscription.unsubscribe();
-    }
-    
-    OnSubmitOrdenar()
-    {
-      this.authservice.ordenar(this.name);
-    }   
+  ngOnInit() {
+    this.chatsservice.getChats().subscribe(DetalleTipoEmpanada => {
+      this.chachaslist = DetalleTipoEmpanada;
+    })
+  }
+
   VolverHome(){
     this.router.navigate(['/home']);
   }
+
 }
+  
