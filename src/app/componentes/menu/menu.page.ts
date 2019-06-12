@@ -1,8 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router'
+<<<<<<< HEAD
 import { ChachasService} from "../../servicios/chachas.service";
 import { ModalController } from '@ionic/angular';
 
+=======
+import { ChachasService, chacha} from "../../servicios/chachas.service";
+>>>>>>> parent of c93e7d38... agregando models
 
 
 @Component({
