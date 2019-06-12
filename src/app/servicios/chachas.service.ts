@@ -7,6 +7,7 @@ export interface chacha {
   nombre_chacha : string
   descripcion_chacha : string
   img : string
+  precio_chacha : number
 }
 @Injectable({
   providedIn: 'root'
@@ -15,7 +16,7 @@ export class ChachasService {
 
   constructor(private db :AngularFirestore) { }
 
-  public getChachas(){
+  getChachas(){
     return this.db.collection('chachas').snapshotChanges().pipe(map(chachastipos =>{
       return chachastipos.map(a =>{
         const data = a.payload.doc.data() as chacha;
