@@ -11,19 +11,18 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { firebaseConfig } from "../environments/environment";
 import { AngularFireModule } from "@angular/fire";
-import { AngularFirestoreModule, FirestoreSettingsToken } from "@angular/fire/firestore";
-import {ChachaComponent} from "./componentes/chacha/chacha.component"
+
+
+
 
 @NgModule({
   declarations: [AppComponent],
-  entryComponents: [ChachaComponent],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, 
-  AngularFireModule.initializeApp(firebaseConfig), AngularFirestoreModule],
+  AngularFireModule.initializeApp(firebaseConfig)],
   providers: [
     StatusBar,
     SplashScreen,
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
-    {provide: FirestoreSettingsToken, useValue: {} }
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]
 })

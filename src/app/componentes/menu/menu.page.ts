@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router'
-import { ChachasService, chacha } from "../../servicios/chachas.service";
+import { ChachasService} from "../../servicios/chachas.service";
 import { ModalController } from '@ionic/angular';
-import {ChachaComponent} from "../chacha/chacha.component"
+
 
 
 @Component({
@@ -12,10 +12,10 @@ import {ChachaComponent} from "../chacha/chacha.component"
 })
 export class MenuPage implements OnInit {
 
+
   public chachas :any = [];
 
-  constructor(public router : Router, public chachasservice : ChachasService,
-    private modal : ModalController) { }
+  constructor(public router : Router, public chachasservice : ChachasService) { }
 
   ngOnInit() {
     this.chachasservice.getChachas().subscribe(chachas => {
@@ -24,17 +24,7 @@ export class MenuPage implements OnInit {
       
     })
   }
-  openMenu(chacha){
-    this.modal.create({
-      component: ChachaComponent,
-      componentProps : {
-        nombre_chacha : chacha.nombre_chacha
-      }
-    }).then ( (modal) => modal.present())
-  }
-
   VolverHome(){
     this.router.navigate(['/home']);
    }
-
 }
