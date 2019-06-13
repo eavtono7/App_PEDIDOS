@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthService } from "../servicios/auth.service";
 
 @Component({
   selector: 'app-home',
@@ -6,7 +7,15 @@ import { Component } from '@angular/core';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
+  telefono: string; 
+  applicationVerifier: firebase.auth.ApplicationVerifier;
+  constructor(private authService: AuthService) {}
+ngOnInit(){
 
-  constructor() {}
+  }
+
+  OnsubmitLogIn(){
+    this.authService.login(this.telefono,this.applicationVerifier);
+  }
 
 }
