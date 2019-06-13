@@ -15,17 +15,38 @@
     </ion-avatar>
     <ion-label>
       <h3><b>{{DetalleTipoEmpanada.Nombre_Empanada}}</b></h3>
-      <p>Precio(Bs.)</p>
-      <p>{{DetalleTipoEmpanada.Precio_Empanada}}</p>
+
+      <div class="ion-text-right">
+          <p >Precio(Bs.)</p>
+          <h3>{{DetalleTipoEmpanada.Precio_Empanada}}</h3>
+        </div>
     </ion-label>
   </ion-item> 
-
- 
-  <ion-button size="small">Total Bs.</ion-button>
 </ion-list>
 
-
 </ion-content>
-
-
   
+<ion-footer>
+    <ion-toolbar color="secondary">
+      
+        <ion-buttons slot="primary">
+            <ion-button >
+              <ion-icon slot="icon-only" name="md-arrow-forward"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+
+        <ion-buttons  >
+        <ion-button  fill = "clear" slot="start" (click) = 'VolverHome()'>
+            <ion-icon slot="icon-only" name="md-add-circle"></ion-icon>
+          </ion-button>
+        </ion-buttons>
+          
+      <ion-title>
+        <p>
+            <ion-text color="dark">
+            <h5> Total</h5>
+            </ion-text>              
+        </p>
+      </ion-title>
+    </ion-toolbar>
+  </ion-footer>
