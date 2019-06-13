@@ -10,12 +10,10 @@ export class HomePage {
   telefono: string; 
   applicationVerifier: firebase.auth.ApplicationVerifier;
   constructor(private authService: AuthService) {}
-ngOnInit(){
+  ngOnInit(){
 
   }
-
   OnsubmitLogIn(){
     this.authService.login(this.telefono,this.applicationVerifier);
   }
-
 }
