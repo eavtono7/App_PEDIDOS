@@ -16,13 +16,6 @@ interface chacha {
 
 }
 
-// export interface chacha {
-//   descripcion : string
-//   nombre : string
-//   img : string
-//   precio : number
-// }
-
 @Component({
   selector: 'app-menu',
   templateUrl: './menu.page.html',
@@ -35,7 +28,6 @@ export class MenuPage implements OnInit{
   empanadas: Observable<any>;
   listaEmpanadas: AngularFirestoreCollection<any>;
 
- // @ViewChild('map') mapElement: ElementRef;
   map: any;
   constructor( public chachaservice : ChachasService,
     public router : Router, private database: AngularFirestore, 
