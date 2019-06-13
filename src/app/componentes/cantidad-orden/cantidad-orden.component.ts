@@ -13,6 +13,8 @@ export class CantidadOrdenComponent implements OnInit {
   cant : number;
   nombre : string
 
+  
+
   constructor(private navparams : NavParams, private modal : ModalController) { }
 
   ngOnInit() {
