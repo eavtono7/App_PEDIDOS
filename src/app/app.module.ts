@@ -13,12 +13,14 @@ import { firebaseConfig} from "../environments/environment";
 import { AngularFireModule } from "@angular/fire";
 import { AngularFirestoreModule, FirestoreSettingsToken } from "@angular/fire/firestore";
 import { CantidadOrdenComponent } from "./componentes/cantidad-orden/cantidad-orden.component";
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [AppComponent, CantidadOrdenComponent],
   entryComponents: [CantidadOrdenComponent],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, 
-  AngularFireModule.initializeApp(firebaseConfig), AngularFirestoreModule],
+  AngularFireModule.initializeApp(firebaseConfig), AngularFirestoreModule, FormsModule],
+  
   providers: [
     StatusBar,
     SplashScreen,

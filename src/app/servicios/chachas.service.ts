@@ -7,7 +7,7 @@ export interface chacha {
   nombre_chacha : string
   descripcion_chacha : string
   img : string
-  precio : number
+  precio_chacha : number
 }
 @Injectable({
   providedIn: 'root'
@@ -21,7 +21,7 @@ export class ChachasService {
       return chachastipos.map(a =>{
         const data = a.payload.doc.data() as chacha;
         data.id_chacha = a.payload.doc.id;
-return data;
+        return data;
       })
     }))
   }

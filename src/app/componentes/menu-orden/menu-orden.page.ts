@@ -29,7 +29,8 @@ export class MenuOrdenPage implements OnInit {
       component : CantidadOrdenComponent,
       componentProps :{
         nombre : chacha.nombre_chacha,
-        img : chacha.img
+        img : chacha.img,
+        precio : chacha.precio_chacha
       }
     }).then( (modal) => modal.present())
 
