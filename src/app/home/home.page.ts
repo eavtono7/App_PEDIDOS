@@ -18,6 +18,6 @@ export class HomePage {
     this.router.navigate(['/menu']);
   }
   IrAOrdenar(){
-    this.router.navigate(['/ordenar']);
+    this.router.navigate(['/pedido']);
   }
 }
