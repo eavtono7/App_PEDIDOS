@@ -14,11 +14,12 @@ import { AngularFireModule } from "@angular/fire";
 import { AngularFirestoreModule, FirestoreSettingsToken } from "@angular/fire/firestore";
 import { CantidadOrdenComponent } from "./componentes/cantidad-orden/cantidad-orden.component";
 import { PedidoComponent } from "./componentes/pedido/pedido.component";
+import { DetallesComponent } from "./componentes/detalles/detalles.component";
 import { FormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [AppComponent, CantidadOrdenComponent, PedidoComponent],
-  entryComponents: [CantidadOrdenComponent, PedidoComponent],
+  declarations: [AppComponent, CantidadOrdenComponent, PedidoComponent, DetallesComponent ],
+  entryComponents: [CantidadOrdenComponent, PedidoComponent, DetallesComponent],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, 
   AngularFireModule.initializeApp(firebaseConfig), AngularFirestoreModule, FormsModule],
   

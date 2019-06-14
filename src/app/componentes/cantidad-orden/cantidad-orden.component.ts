@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {NavParams, ModalController} from '@ionic/angular';
+import { DetallesComponent } from "../detalles/detalles.component";
+import { detalle } from "../../modelos/detalle";
 
 @Component({
   selector: 'app-cantidad-orden',
@@ -7,13 +9,18 @@ import {NavParams, ModalController} from '@ionic/angular';
   styleUrls: ['./cantidad-orden.component.scss'],
 })
 export class CantidadOrdenComponent implements OnInit {
+
+  public detallesList = [
+    'hola', 'holitas', 'holotas'
+  ];
+
+  public detalle : detalle;
+
   public precio : number;
   private cantidad_chacha : number;
   private precio_total : number;
   cant : number;
   nombre : string
-
-  
 
   constructor(private navparams : NavParams, private modal : ModalController) { }
 
@@ -22,7 +29,7 @@ export class CantidadOrdenComponent implements OnInit {
     this.precio = this.navparams.get('precio');
     this.nombre = this.navparams.get('nombre');
     this.cantidad_chacha = 1;
-    this.precio_total = (this.cantidad_chacha * this.precio) //recuperar de base de datos ????como?
+    this.precio_total = (this.cantidad_chacha * this.precio) 
 
   }
 //recuperar cada que cambia por el teclado la cantidad que se pone
@@ -46,9 +53,22 @@ export class CantidadOrdenComponent implements OnInit {
 
   MandarDetalle(){
     
-    console.log(this.nombre);
+    console.log(this.detallesList);
     console.log(this.cantidad_chacha);
     console.log(this.precio_total);
   }
 
+  SeleccionarCantidadPedido(){
+    this.modal.create({
+      component : CantidadOrdenComponent,
+      componentProps :{
+        ////
+      }
+    }).then( (modal) => modal.present())
+
+  }
+
+  AgregarLista(){
+    this.detallesList.push(this.detalle.toString())
+  }
 }
