@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from "@angular/fire/auth";
-import { stringify } from '@angular/core/src/render3/util';
-import { error } from '@angular/compiler/src/util';
+import { promise } from 'protractor';
 
 @Injectable({
   providedIn: 'root'
@@ -9,10 +8,13 @@ import { error } from '@angular/compiler/src/util';
 export class AuthService {
 
   constructor(private AFauth: AngularFireAuth) { }
-  login(telefono: string, applicationVerifier: firebase.auth.ApplicationVerifier){
-    this.AFauth.auth.signInWithPhoneNumber(telefono, applicationVerifier).then(res=>{
-      console.log(res)
-    }).catch(error=> console.log('error : '+ error))
+  login(email: string, password: string){
 
-  }
+return new Promise((resolve, rejected) =>{
+
+    this.AFauth.auth.signInWithEmailAndPassword(email, password).then(user=>{
+      resolve(user);
+    }).catch(error=> rejected(error));
+});
+}
 }
