@@ -3,7 +3,7 @@
       <ion-button fill = "clear" slot="start" (click) = 'VolverHome()'>
           <ion-icon name="arrow-round-back" size="large"  ></ion-icon>
         </ion-button>
-    <ion-title>Ordenar</ion-title>
+    <ion-title>Ver detalle de pedido</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -22,29 +22,26 @@
         </div>
     </ion-label>
   </ion-item> 
+  <ion-button color="primary">Añadir mas empanadas</ion-button>
 </ion-list>
+
+<ion-checkbox disabled="true"></ion-checkbox>
 
 </ion-content>
   
+
 <ion-footer>
-    <ion-toolbar color="secondary">
-      
+    <ion-toolbar color="primary">   
         <ion-buttons slot="primary">
             <ion-button >
               <ion-icon slot="icon-only" name="md-arrow-forward"></ion-icon>
             </ion-button>
         </ion-buttons>
-
-        <ion-buttons  >
-        <ion-button  fill = "clear" slot="start" (click) = 'VolverHome()'>
-            <ion-icon slot="icon-only" name="md-add-circle"></ion-icon>
-          </ion-button>
-        </ion-buttons>
-          
+     
       <ion-title>
         <p>
-            <ion-text color="dark">
-            <h5> Total</h5>
+            <ion-text color="light">
+            <h2>   Ver total de pago</h2>
             </ion-text>              
         </p>
       </ion-title>
