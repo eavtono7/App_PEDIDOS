@@ -1,22 +1,67 @@
 <ion-header>
-  <ion-toolbar>
-      <ion-button fill = "clear" slot="start" (click) = 'VolverHome()'>
-          <ion-icon name="arrow-round-back" size="large"  ></ion-icon>
-        </ion-button>
-    <ion-title>Ordenar</ion-title>
-  </ion-toolbar>
-</ion-header>
+    <ion-toolbar>
+        <ion-button fill = "clear" slot="start" (click) = 'VolverHome()'>
+            <ion-icon name="arrow-round-back" size="large"  ></ion-icon>
+          </ion-button>
+      <ion-title>
+        Configuracion de Cuenta
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content>
 
-<ion-content>
+      <ion-list>
+          <ion-item>
+              <ion-icon name="person" item-start></ion-icon>
+              <ion-label stacked>Nombres:</ion-label>
+              <ion-input type="text" placeholder="Nombre"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-icon name="person" item-start></ion-icon>
+                <ion-label stacked>Apellidos:</ion-label>
+                <ion-input type="text" placeholder="Apellidos"></ion-input>
+              </ion-item>
+              <ion-item>
+                  <ion-icon name="mail" item-start></ion-icon>
+                  <ion-label stacked>Correo electronico:</ion-label>
+                  <ion-input type="email" placeholder="Email"></ion-input>
+                </ion-item>
+                <ion-item>
+                  <ion-icon name="calendar" item-start></ion-icon>
+                  <ion-label stacked>Fecha de nacimiento:</ion-label>
+                  <ion-datetime displayFormat="MM-DD-YYYY" placeholder="MM-DD-YYY"></ion-datetime>
+                </ion-item>
+                <div >
+                    <ion-item>
+                      <ion-icon name="eye" item-start></ion-icon>
+                      <ion-label stacked>Contraseña:</ion-label>
+                      <ion-input type="password" placeholder="Contraseña"></ion-input>
+                    </ion-item>
+                    <ion-item>
+                      <ion-icon name="eye" item-start></ion-icon>
+                      <ion-label stacked>Confirmar contraseña:</ion-label>
+                      <ion-input type="password" placeholder="Confirmar contraseña"></ion-input>
+                    </ion-item>
+                  </div>
+        <ion-item>
+           
+          <ion-label>Activar notificaciones</ion-label>
+          <ion-toggle secondary
+           ></ion-toggle>
+        </ion-item>
+        <ion-item>
+          <ion-label>Activar Geolocalizacion</ion-label>
+          <ion-toggle secondary
+      ></ion-toggle>
+        </ion-item>
+        <ion-item>
+          <ion-label>Activar actualizaciones</ion-label>
+          <ion-toggle secondary
+         ></ion-toggle>
+        </ion-item>
+      </ion-list>
 
-    <ion-chip>
-        <ion-icon name="pin" color="primary"></ion-icon>
-        <ion-label>Icon Chip</ion-label>
-      </ion-chip>
-
-      <ion-chip>
-          <ion-label>Button Chip</ion-label>
-          <ion-icon name="close-circle"></ion-icon>
-        </ion-chip>
-
-</ion-content>
+      <ion-button expand="block">Guardar Cambios</ion-button>
+    
+  </ion-content>
