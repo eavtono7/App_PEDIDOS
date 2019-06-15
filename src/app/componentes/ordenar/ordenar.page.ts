@@ -19,8 +19,8 @@ export class OrdenarPage implements OnInit {
   constructor(public router : Router, public pedidoService:PedidosService) { }
   ngOnInit() {
 
-    this.orden.referencia= this.referencia;
-    this.orden.telefono = this.telefono;
+    //this.orden.referencia= this.referencia;
+    //this.orden.telefono = this.telefono;
 
   }
 
@@ -29,12 +29,12 @@ export class OrdenarPage implements OnInit {
   }
 
   EmpezarPedido(){
-    console.log(this.orden.referencia)
+    //console.log(this.orden.referencia)
     
     //console.log(this.orden)
     //this.pedidoService.Hola();
     //this.pedidoService.CrearPedido(this.telefono, this.referencia)
 
-    //this.router.navigate(['/menu-ordenar']);
+    this.router.navigate(['/menu-orden']);
   }
 }

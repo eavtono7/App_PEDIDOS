@@ -10,19 +10,16 @@
 <ion-content padding>
   <ion-item>
     <ion-label position="floating">Numero de telefono:</ion-label>
-    <ion-input placeholder = "Ej: 72229922" [(ngModel)]="orden.telefono"></ion-input>
+    <ion-input placeholder = "Ej: 72229922" [(ngModel)]="telefono"></ion-input>
   </ion-item>
   <ion-item>
     <ion-label position="floating">Preguntar por:</ion-label>
-    <ion-input placeholder = "Ej: Juan Perez" [(ngModel)]="orden.referencia"></ion-input>
+    <ion-input placeholder = "Ej: Juan Perez" [(ngModel)]="referencia"></ion-input>
   </ion-item>
 
   <ion-button (click)="EmpezarPedido()">
     <ion-icon slot="start" name="cart" ></ion-icon>
     Empezar Pedido
   </ion-button>
-
-  <h1>{{telefono}}</h1>
-  <h1>{{referencia}}</h1>
 
 </ion-content>
