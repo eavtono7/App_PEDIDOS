@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router'
+import { orden } from "../../modelos/orden";
+import { PedidosService } from "../../servicios/pedidos.service";
 
 @Component({
   selector: 'app-ordenar',
@@ -8,12 +10,31 @@ import {Router} from '@angular/router'
 })
 export class OrdenarPage implements OnInit {
 
-  constructor(public router : Router) { }
+  private referencia : string;
+  private telefono : string;
+  public orden : orden
+  
+  
 
+  constructor(public router : Router, public pedidoService:PedidosService) { }
   ngOnInit() {
+
+    this.orden.referencia= this.referencia;
+    this.orden.telefono = this.telefono;
+
   }
 
   VolverHome(){
     this.router.navigate(['/home']);
+  }
+
+  EmpezarPedido(){
+    console.log(this.orden.referencia)
+    
+    //console.log(this.orden)
+    //this.pedidoService.Hola();
+    //this.pedidoService.CrearPedido(this.telefono, this.referencia)
+
+    //this.router.navigate(['/menu-ordenar']);
   }
 }
