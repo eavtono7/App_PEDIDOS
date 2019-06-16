@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {NavParams, ModalController} from '@ionic/angular';
+import {Router} from '@angular/router'
 import { DetallesComponent } from "../detalles/detalles.component";
 import { detalle } from "../../modelos/detalle";
 
@@ -22,7 +23,7 @@ export class CantidadOrdenComponent implements OnInit {
   cant : number;
   nombre : string
 
-  constructor(private navparams : NavParams, private modal : ModalController) { }
+  constructor(private navparams : NavParams, private modal : ModalController, public router : Router) { }
 
   ngOnInit() {
 
@@ -52,10 +53,14 @@ export class CantidadOrdenComponent implements OnInit {
   }
 
   MandarDetalle(){
+    this.router.navigate(['/pedido']);
+    
     
     console.log(this.detallesList);
     console.log(this.cantidad_chacha);
     console.log(this.precio_total);
+
+    this.modal.dismiss();
   }
 
   SeleccionarCantidadPedido(){
