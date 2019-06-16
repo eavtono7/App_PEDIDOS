@@ -6,13 +6,10 @@ import { Router } from "@angular/router";
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
 })
-export class HomePage {
+export class HomePage{
   email: string;
   password: string;
   constructor(private authService: AuthService, public router: Router) {}
-  ngOnInit(){
-
-  }
   OnsubmitLogIn(){
     this.authService.login(this.email, this.password).then(res =>{
         this.router.navigate(['/menu']);
