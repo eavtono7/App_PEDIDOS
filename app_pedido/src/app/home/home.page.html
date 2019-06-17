@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar color = "primary">
+    <ion-title color = "light" ion-text color="dark">
+      Las Chachas La Paz
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding color = "secondary" >
+
+    <ion-card  class="welcome-card" color="light">
+        <ion-img src="/assets/61.jpg"></ion-img>
+        <ion-card-header>
+          <ion-card-title  >Bienvenido Cliente</ion-card-title>
+        </ion-card-header>
+        <p>Esta aplicacion esta diseñada para realizar pedidos desde la comodidad de tu hogar</p>
+        <ion-card-content>
+               </ion-card-content>
+    </ion-card>
+  <div class="ion-padding">
+  
+  </div>
+  
+    <ion-button color = "primary" expand = "block" (click) = 'IrAMenu()'> 
+      <ion-icon name="list-box"></ion-icon> Menu de Chachas 
+    </ion-button>
+  <br>
+    <ion-button expand = "block" (click) = 'IrAOrdenar()'> 
+        <ion-icon name="cart"></ion-icon> Ordenar Chachas 
+    </ion-button>
+  <br>
+    <ion-button expand = "block" (click) = 'IrASucursales()'> 
+        <ion-icon name="map"></ion-icon> Sucursales </ion-button>
+</ion-content>
+

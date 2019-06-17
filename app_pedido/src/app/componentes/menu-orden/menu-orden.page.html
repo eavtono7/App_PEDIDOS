@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar color = "secondary">
+      <ion-button fill = "clear" slot="start" (click) = 'VolverHome()'>
+          <ion-icon name="arrow-round-back" size="large"  ></ion-icon>
+        </ion-button>
+    <ion-title>Menu</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding color="primary">
+  <ion-item *ngFor = "let chacha of chachaslist">
+    <ion-avatar slot ="start">
+      <ion-img [src]="chacha.img"></ion-img>
+    </ion-avatar>
+    <ion-label>
+      <h2>{{chacha.nombre_chacha}}</h2>
+      <p>{{chacha.descripcion_chacha}}</p>
+      <p>{{chacha.precio_chacha}}</p>
+
+    </ion-label>
+  </ion-item> 
+
+</ion-content>
