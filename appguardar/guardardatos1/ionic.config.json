@@ -1,0 +1,7 @@
+{
+  "name": "guardardatos",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
