@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {NavParams} from "@ionic/angular";
 import { Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
-import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
+//import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 
 @Component({
   selector: 'app-masinfo',
@@ -17,7 +17,7 @@ export class MasinfoComponent implements OnInit {
   public ubicacion : any;
   public imagensuc: any
 
-  constructor( private navparams: NavParams, public router : Router, public modal: ModalController, private browser:InAppBrowser ) { }
+  constructor( private navparams: NavParams, public router : Router, public modal: ModalController ) { }
 
   ngOnInit() {
     this.navparams.get('nombresuc')
@@ -32,7 +32,7 @@ export class MasinfoComponent implements OnInit {
     this.modal.dismiss();
   }
   OpenUrl(){
-    this.browser.create("https://www.google.com/maps/@-17.3793081,-66.1621906,15z")
+    //this.browser.create("https://www.google.com/maps/@-17.3793081,-66.1621906,15z")
 
   }
 
