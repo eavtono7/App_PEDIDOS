@@ -1,14 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from "../servicios/auth.service";
-import { PedidosService } from "../servicios/pedidos.service";
+import { PedidosService ,Pedido, chachas} from "../servicios/pedidos.service";
 
-interface pedido{
-  id:string,
-  Estado: string,
-  Referencia: string,
-  Telefono: string,
-  Total: string
-}
+
 
 @Component({
   selector: 'app-menu',
@@ -17,7 +11,8 @@ interface pedido{
 })
 export class MenuPage implements OnInit {
 
-public pedido: any=[];
+public Pedido: any=[];
+public chachas: any=[];
 
   constructor(public authservice: AuthService, public pedidoService: PedidosService) { }
 
@@ -26,16 +21,13 @@ public pedido: any=[];
   }
   
   ngOnInit() {
-    this.pedidoService.getPedido().subscribe( ped =>{
-      ped.map( ped =>{
-        const data : pedido=ped.payload.doc.data() as pedido;
-        data.id = ped.payload.doc.id;
-
-        this.pedido.push(data);
-
-      })
+    this.pedidoService.getPedido().subscribe( peds =>{
+    this.Pedido = peds;
     })
+
+    this.pedidoService.getchachas().subscribe( chacs =>{
+      this.chachas = chacs;
+      })
   }
 
 }
-//minuto 19:20 | Ionic 4 : como Leer datos desde Firebase, como crear modal, App chat parte 3

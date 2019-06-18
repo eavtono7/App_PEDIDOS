@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { PedidosService, Pedido, chachas } from "../servicios/pedidos.service";
+
 
 @Component({
   selector: 'app-envio',
@@ -6,10 +8,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./envio.page.scss'],
 })
 export class EnvioPage implements OnInit {
-
-  constructor() { }
+public Pedido: any =[];
+  constructor(public pedidoservice: PedidosService) { }
 
   ngOnInit() {
+    this.pedidoservice.getPedido().subscribe( peds =>{
+      this.Pedido = peds;
+    })
   }
-
 }
