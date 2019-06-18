@@ -21,7 +21,7 @@ export class PedidosService {
   }
 
   registrarPedido(nombreMoto: string, apellidoMoto: string, latitudMoto: number, longitudMoto: number) {
-    let latLng = new google.maps.LatLng(-17.900897, -66.987689); 
+    this.cambiarEstado(this.asignacionMoto(this.motosUbicaciones));
     return new Promise((resolve, reject) => {  
       this.db.collection('pedido').add({
         UIDMotoTaxi: this.asignacionMoto(this.motosUbicaciones),
@@ -32,7 +32,9 @@ export class PedidosService {
         longitud: longitudMoto,
         
       })
-      alert("Pedido realizado");
+
+     // alert("Pedido realizado");
+      
       
     });
     
@@ -88,18 +90,18 @@ asignacionMoto(ubicaciones){
   let sucursal = new google.maps.LatLng(-17.3921318,-66.2234896);
   for (let loc of ubicaciones){
     
-    if(loc.latitud != null && loc.disponible === false){ 
+    if(loc.latitud != null && loc.disponible === true){ 
       let latLng = new google.maps.LatLng(loc.latitud, loc.longitud); 
       let total = google.maps.geometry.spherical.computeDistanceBetween(latLng, sucursal); 
       console.log('La distancia del conductor '+loc.apellidoMotoTaxi + ' '+ loc.uid +' es '+ total + ' metros');
       motosDistancias.push(total);
     }   
   } 
-  var moto = null;
+  var moto: string;
   var min=Math.min.apply(null, motosDistancias);
   for (let loc of ubicaciones){
     
-    if(loc.latitud != null && loc.disponible === false){
+    if(loc.latitud != null && loc.disponible === true){
       let latLng = new google.maps.LatLng(loc.latitud, loc.longitud); 
       let total = google.maps.geometry.spherical.computeDistanceBetween(latLng, sucursal);
       if( total === min){
@@ -139,4 +141,10 @@ asignacionMoto(ubicaciones){
     console.log('La menor distancia es '+ min +' de '+ sucursal);     
     return sucursal;
     } 
+    cambiarEstado(uid){
+      this.db.collection('motoTaxis').doc(uid).update({
+       disponible: false
+      })
+    }
+    
 }
