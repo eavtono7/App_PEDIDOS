@@ -5,6 +5,17 @@
 export const environment = {
   production: false,
 };
+export const firebaseConfig= 
+{
+  apiKey: "AIzaSyCBExqh9Vn3OxlFzoNXLJRWyB_kAQqL-oc",
+  authDomain: "appclientespruebas.firebaseapp.com",
+  databaseURL: "https://appclientespruebas.firebaseio.com",
+  projectId: "appclientespruebas",
+  storageBucket: "appclientespruebas.appspot.com",
+  messagingSenderId: "700784987583",
+  appId: "1:700784987583:web:8c66e5f13730b9c3"
+};
+
 
 export const firebaseConfig = {
   apiKey: "AIzaSyD93ncJgK2ClqTrtfHmnztCgywM_w99w3A",

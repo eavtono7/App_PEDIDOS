@@ -5,15 +5,14 @@ import { RouteReuseStrategy } from '@angular/router';
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
-
-//import {  environment, firebaseConfig } from '../environments/environment'
-
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-
-import { firebaseConfig} from "../environments/environment";
-import { AngularFireModule } from "@angular/fire";
-import { AngularFirestoreModule, FirestoreSettingsToken } from "@angular/fire/firestore";
+import {AngularFireModule} from '@angular/fire';
+import { AngularFirestoreModule, FirestoreSettingsToken} from '@angular/fire/firestore';
+import { firebaseConfig  }from '../environments/environment';
+import { AngularFireAuthModule} from '@angular/fire/auth'
+import { MasinfoComponent} from './componentes/masinfo/masinfo.component';
+//import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 import { CantidadOrdenComponent } from "./componentes/cantidad-orden/cantidad-orden.component";
 import { ChachaComponent } from "./componentes/chacha/chacha.component"; 
 import { PedidoComponent } from "./componentes/pedido/pedido.component";
@@ -21,12 +20,13 @@ import { DetallesComponent } from "./componentes/detalles/detalles.component";
 import { FormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [AppComponent, CantidadOrdenComponent, PedidoComponent, DetallesComponent, ChachaComponent ],
-  entryComponents: [CantidadOrdenComponent, PedidoComponent, DetallesComponent, ChachaComponent],
+  declarations: [AppComponent, CantidadOrdenComponent, PedidoComponent, DetallesComponent, ChachaComponent , MasinfoComponent ],
+  entryComponents: [CantidadOrdenComponent, PedidoComponent, DetallesComponent, ChachaComponent, MasinfoComponent],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, 
   AngularFireModule.initializeApp(firebaseConfig), AngularFirestoreModule, FormsModule],
 
   providers: [
+    //InAppBrowser,
     StatusBar,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },

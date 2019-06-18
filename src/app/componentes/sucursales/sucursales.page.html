@@ -7,6 +7,16 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
 
+<ion-content padding >
+
+  <ion-list>
+  <ion-item *ngFor ="let sucursal of listaSuc" (click) = "MasInformacion(sucursal)">
+    <ion-icon name="pin" color= "warning" slot = "start" size = "large"></ion-icon>
+      <ion-label>
+       <h2> <b>{{sucursal.nombre_sucursal}}</b></h2>
+       <p>{{sucursal.direccion_sucursal}} </p>
+        </ion-label>
+       </ion-item>
+  </ion-list>
 </ion-content>
