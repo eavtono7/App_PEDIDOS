@@ -6,6 +6,8 @@ import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 
+//import {  environment, firebaseConfig } from '../environments/environment'
+
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
@@ -13,16 +15,17 @@ import { firebaseConfig} from "../environments/environment";
 import { AngularFireModule } from "@angular/fire";
 import { AngularFirestoreModule, FirestoreSettingsToken } from "@angular/fire/firestore";
 import { CantidadOrdenComponent } from "./componentes/cantidad-orden/cantidad-orden.component";
+import { ChachaComponent } from "./componentes/chacha/chacha.component"; 
 import { PedidoComponent } from "./componentes/pedido/pedido.component";
 import { DetallesComponent } from "./componentes/detalles/detalles.component";
 import { FormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [AppComponent, CantidadOrdenComponent, PedidoComponent, DetallesComponent ],
-  entryComponents: [CantidadOrdenComponent, PedidoComponent, DetallesComponent],
+  declarations: [AppComponent, CantidadOrdenComponent, PedidoComponent, DetallesComponent, ChachaComponent ],
+  entryComponents: [CantidadOrdenComponent, PedidoComponent, DetallesComponent, ChachaComponent],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, 
   AngularFireModule.initializeApp(firebaseConfig), AngularFirestoreModule, FormsModule],
-  
+
   providers: [
     StatusBar,
     SplashScreen,

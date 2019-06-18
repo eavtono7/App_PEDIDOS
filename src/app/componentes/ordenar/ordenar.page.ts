@@ -38,3 +38,10 @@ export class OrdenarPage implements OnInit {
     this.router.navigate(['/menu-orden']);
   }
 }
+
+// export class Page {
+//   public ocultar1: boolean = false;
+//   accion1(){
+//     this.ocultar1 = !this.ocultar1;
+//   }
+// }

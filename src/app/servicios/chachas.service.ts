@@ -25,5 +25,10 @@ export class ChachasService {
       })
     }))
   }
-}
 
+
+  getChachaRooms(){
+
+    return this.db.collection('chachaRooms').snapshotChanges()
+  }
+}

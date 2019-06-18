@@ -1,28 +1,79 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import {Router} from '@angular/router'
-import { ChachasService, chacha} from "../../servicios/chachas.service";
-//import { chachaobj } from "../../modelos/chacha";
+import { Observable } from 'rxjs';
+import { AngularFirestoreCollection, AngularFirestore } from '@angular/fire/firestore';
+import { map } from 'rxjs/operators';
+import {ModalController} from "@ionic/angular";
+import {ChachaComponent} from "../chacha/chacha.component";
+import { ChachasService } from 'src/app/servicios/chachas.service';
 
+interface chacha {
+  id : string
+  descripcion : string
+  nombre : string
+  img : string
+  precio : number
+
+}
 
 @Component({
   selector: 'app-menu',
   templateUrl: './menu.page.html',
   styleUrls: ['./menu.page.scss'],
 })
-export class MenuPage implements OnInit {
+export class MenuPage implements OnInit{
 
-  public chachaslist:any=[];
+  public chachaRooms :any = [];
 
-  constructor(public router : Router, public chachasservice : ChachasService) { }
+  empanadas: Observable<any>;
+  listaEmpanadas: AngularFirestoreCollection<any>;
+
+  map: any;
+  constructor( public chachaservice : ChachasService,
+    public router : Router, private database: AngularFirestore, 
+    private modal : ModalController) {
+    this.getEmpanadas();
+   }
+
+   getEmpanadas (){
+     this.listaEmpanadas = this.database.collection('chachas');
+
+     this.empanadas = this.listaEmpanadas.snapshotChanges().pipe(
+       map(actions => 
+        actions.map(a => {
+         const data = a.payload.doc.data();
+         const id = a.payload.doc.id;
+         return { id, ...data};
+       })
+      )
+     );   
+   }
 
   ngOnInit() {
-    this.chachasservice.getChachas().subscribe(chachas => {
-      this.chachaslist = chachas;
+    this.chachaservice.getChachaRooms().subscribe( chachas => {
+      chachas.map(chacha => {
+
+        const data : chacha = chacha.payload.doc.data() as chacha;
+        data.id = chacha.payload.doc.id;
+
+        console.log(chacha.payload.doc.data())
+      })
     })
   }
     
   VolverHome(){
     this.router.navigate(['/home']);
+  }
+
+  openChacha(chacha){
+
+    this.modal.create({
+      component : ChachaComponent,
+      componentProps : {
+        chacha: chacha
+      }
+    }).then((modal) => modal.present())
+
   }
 
 }
