@@ -9,41 +9,52 @@
     <ion-label>TOTAL PEDIDO CHACHAS</ion-label>
   </ion-item>
 
-  <ion-list lines="full">
-
-    <ion-item>
-      <ion-label>Tipo Chacha 1</ion-label>
-    </ion-item>
-    <ion-item>
-      <ion-label>Tipo Chacha 2</ion-label>
-    </ion-item>
-    <ion-item>
-      <ion-label>Tipo Chacha 3</ion-label>
-    </ion-item>
-  </ion-list>
-  <ion-item>
-    <ion-label>TOTAL</ion-label>
-  </ion-item>
+  <ion-list *ngFor ="let ped of Pedido">
+      <ion-item>
+        <ion-label>Estado: {{ped.Estado}}</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>Referencia: {{ped.Referencia}}</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>Telefono: {{ped.Telefono}}</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>Total: {{ped.Total}}</ion-label>
+        </ion-item>
+    </ion-list>
 
 
   <ion-item color="success">
     <ion-label>TOTAL PEDIDO JUGOS</ion-label>
   </ion-item>
-
-  <ion-list lines="full">
-    <ion-item>
-      <ion-label>JUGO 1</ion-label>
-    </ion-item>
-    <ion-item>
-      <ion-label>JUGO 2</ion-label>
-    </ion-item>
-  </ion-list>
   <ion-item>
-    <ion-label>TOTAL</ion-label>
-  </ion-item>
+      <ion-label>Manzana</ion-label>
+    </ion-item>
+    <ion-item>
+        <ion-label>1</ion-label>
+    </ion-item>
+    <ion-item>
+        <ion-label>Total: 2</ion-label>
+        </ion-item>
 
+ <!-- <ion-list *ngFor ="let ped of Pedido">
+      <ion-item>
+        <ion-label>Estado: {{ped.Estado}}</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>Referencia: {{ped.Referencia}}</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>Telefono: {{ped.Telefono}}</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>Total: {{ped.Total}}</ion-label>
+        </ion-item>
+    </ion-list>
+-->
   <ion-item color="success">
-    <ion-label>TOTAL PEDIDO</ion-label>
+    <ion-label>TOTAL PEDIDO 50</ion-label>
   </ion-item>
 
   <ion-button expand="full" routerLink="/menu" color="primary">
