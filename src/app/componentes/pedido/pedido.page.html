@@ -1,7 +1,5 @@
 <ion-toolbar>
-  <ion-button fill = "clear" slot="start" (click) = 'VolverHome()'>
-      <ion-icon name="arrow-round-back" size="large"  ></ion-icon>
-    </ion-button>
+  
 <ion-title>Detalle Pedido</ion-title>
 </ion-toolbar>
 
@@ -31,7 +29,7 @@
 <ion-footer>
 <ion-toolbar color="secondary">
       <ion-buttons slot="primary">
-      <ion-button >
+      <ion-button (click)="IraConfirmar()">
         <ion-icon slot="icon-only" name="md-arrow-forward"></ion-icon>
       </ion-button>
   </ion-buttons>
@@ -41,7 +39,7 @@
     </ion-text>  --> 
 
   <ion-buttons  >
-  <ion-button  fill = "clear" slot="start" (click) = 'VolverHome()'>
+  <ion-button  fill = "clear" slot="start" (click)="IraMenu()">
       <ion-icon slot="icon-only" name="md-add-circle"></ion-icon>
     </ion-button>
   </ion-buttons>

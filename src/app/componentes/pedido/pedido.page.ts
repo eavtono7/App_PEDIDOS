@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Router} from '@angular/router'
 
 @Component({
   selector: 'app-pedido',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PedidoPage implements OnInit {
 
-  constructor() { }
+  constructor(public router : Router) { }
 
   ngOnInit() {
   }
 
+  IraConfirmar(){
+    this.router.navigate(['/confirmacion']);
+  }
+  IraMenu(){
+    this.router.navigate(['/menu-orden'])
+  }
 }
