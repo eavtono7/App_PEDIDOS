@@ -1,12 +1,10 @@
 // This file can be replaced during build by using the `fileReplacements` array.
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
-
-export const environment = {
-  production: false
+export var environment = {
+    production: false
 };
-
-export const firebaseConfig = {
+export var firebaseConfig = {
     apiKey: "AIzaSyAwPVADwAe4kocvRPw5JIMZV_qGoaIeM00",
     authDomain: "chachasmotos.firebaseapp.com",
     databaseURL: "https://chachasmotos.firebaseio.com",
@@ -23,3 +21,4 @@ export const firebaseConfig = {
  * on performance if an error is thrown.
  */
 // import 'zone.js/dist/zone-error';  // Included with Angular CLI.
+//# sourceMappingURL=environment.js.map
