@@ -143,7 +143,7 @@ asignacionMoto(ubicaciones){
     } 
     cambiarEstado(uid){
       this.db.collection('motoTaxis').doc(uid).update({
-       disponible: false
+       enPedido: true
       })
     }
     
